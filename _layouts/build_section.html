@@ -11,7 +11,7 @@
 
 <div class="shlisting">
     {% unless prod_builds == empty %}
-        <p><b>Production</b></p>
+        <p><b>Production builds</b></p>
         <div class="category">
             {% for build in prod_builds %}
                 {% include build.html content=build %}

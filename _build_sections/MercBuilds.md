@@ -10,7 +10,7 @@ builds:
       - "Coin Pillage trophy"
     alignment: Neutral
     faction: Merc
-    bloodline: Fairy
+    bloodline: Fairy <b>(Ignore if you don't have Bloodlines)</b>
     builds:
       - build: "FR2,FR7,EL5,GB1,TT1,TT7,DD1,DD6,DD7,FC4,DN4,DW7,SP:Fairy Chanting,SP:God's Hand"
       - build: "FR2,EL5,GB1,TT7,DD1,DD6,DD7,FC3,FC4,DN4,DN8,DW7,SP:Fairy Chanting,SP:God's Hand"
@@ -35,7 +35,7 @@ builds:
       - R12 Know Your Enemy Part I
     alignment: Neutral
     faction: Merc
-    bloodline: Fairy
+    bloodline: Fairy <b>(Ignore if you don't have Bloodlines)</b>
     builds:
       - build: "FR2,EL5,AN6,GB1,UD7,DM3,TT7,DD1,FC4,FC7,DN4,DW7,SP:Fairy Chanting,SP:God's Hand"
       - build: "FR2,EL5,AN2,GB1,UD7,DM3,TT7,DD6,FC4,DN4,DN8,DW7,SP:Fairy Chanting,SP:God's Hand"
@@ -50,7 +50,7 @@ builds:
     uses: R3+
     alignment: Evil
     faction: Merc
-    bloodline: Elf
+    bloodline: Elf <b>(Ignore if you don't have Bloodlines)</b>
     builds:
       - build: "FR2,FR4,FR7,FR9,EL9,AN1,AN5,AN6,DN2,DN3,DN4,DN7,SP:Goblin's Greed,SP:Fairy Chanting"
     notes:
@@ -65,7 +65,7 @@ builds:
       - R7+ Autocasting series
     alignment: Neutral
     faction: Merc
-    bloodline: Faceless
+    bloodline: Faceless <b>(Ignore if you don't have Bloodlines)</b>
     builds:
       - build: "AN1,GB1,GB5,UD7,TT2,TT7,DD4,DD6,FC7,DN2,DN4,DW7,SP:Fairy Chanting,SP:Moon Blessing"
     notes:
@@ -80,7 +80,7 @@ builds:
       - Building count buff
     alignment: Any
     faction: Merc
-    bloodline: Goblin
+    bloodline: Goblin <b>(Ignore if you don't have Bloodlines)</b>
     builds:
       - build: "FR2,FR7,EL5,GB1,TT7,DD1,DD6,DD7,FC4,DN2,DN4,DW7,SP:Fairy Chanting,SP:God's Hand"
     notes:
