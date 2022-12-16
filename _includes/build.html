@@ -1,0 +1,69 @@
+<div class="shelementwhole">
+  <p onclick="shohid($(this));">
+    <b>
+      <a href="#" onclick="return false;">
+        {{ build.name }} -
+        {% for v in build.uses %}
+          {{ v }}{% if forloop.last != true %},
+          {% endif %}
+        {% endfor %}
+      </a>
+    </b>
+  </p>
+  <div class="autohide">
+    <p>
+      <b>Author</b>: {{ build.author }}
+    </p>
+    {% if build.gem_range %}
+      <p>
+        <b>Range</b>: {{ build.gem_range }}
+      </p>
+    {% endif %}
+    {% if build.requirement %}
+      <p>
+        <b>Requirement</b>:
+        {% for item in build.requirements %}
+          {% if forloop.first == false %},{% endif %}
+          {{ item }}
+        {% endfor %}
+      </p>
+    {% endif %}
+    <p>
+      <b>Alignment</b>: {{ build.alignment }}
+    </p>
+    <p>
+      <b>Faction</b>: {{ build.faction }}</p>
+    {% if build.bloodline %}
+      <p>
+        <b>Bloodline</b>: {{ build.bloodline }}
+      </p>
+    {% endif %}
+    {% for build_string in build.builds %}
+      <p>
+        <button onclick="myFunction($(this))">Copy Build</button>
+        <input type="text" value="{{ build_string.build }}">
+        {% if build_string.note %}
+          <b>{{ build_string.note }}</b>
+        {% endif %}
+      </p>
+    {% endfor %}
+    {% for note in build.notes %}
+      <p>
+        <b>Note</b>: {{ note }}
+      </p>
+    {% endfor %}
+    {% if build.slowdown %}
+      <p>
+        <b>
+          <font color="DarkRed">
+            When build slows down:</font>
+        </b>
+      </p>
+      {% for note in build.slowdown %}
+        <p>
+          <b>Note</b>: {{ note }}
+        </p>
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>

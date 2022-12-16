@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+{% include header.html %}
+
+{{ content }}
+
+{% assign prod_builds = page.builds | where:"type","Production" %}
+{% assign trophy_builds = page.builds | where:"type","Trophy" %}
+{% assign buff_builds = page.builds | where:"type","Buff" %}
+
+<div class="shlisting">
+    {% unless prod_builds == empty %}
+        <p><b>Production</b></p>
+        <div class="category">
+            {% for build in prod_builds %}
+                {% include build.html content=build %}
+            {% endfor %}
+        </div>
+        <br>
+    {% endunless %}
+
+    {% unless trophy_builds == empty %}
+        <p><b>Trophy builds</b></p>
+        <div class="category">
+            {% for build in trophy_builds %}
+                {% include build.html content=build %}
+            {% endfor %}
+        </div>
+        <br>
+    {% endunless %}
+
+    {% unless buff_builds == empty %}
+        <p><b>Buff builds</b></p>
+        <div class="category">
+            {% for build in buff_builds %}
+                {% include build.html content=build %}
+            {% endfor %}
+        </div>
+    {% endunless %}
+</div>
+{% include footer.html %}
