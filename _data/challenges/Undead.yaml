@@ -1,0 +1,57 @@
+UDC1:
+  title: Undead Challenge 1
+  name: Deadly Impatience
+  image: "http://musicfamily.org/realm/Factions/picks/DeadlyImpatienceChallenge.png"
+  text: >
+    "The walking dead aren't very fond of a living being among their kind. Fortunately for you, an army of shambling corpses is slow to both think and move."
+  requirements:
+    - Undead as Base Faction
+    - Reincarnation 2+
+    - True Night upgrade purchased
+  challenge: Get 6 assistants via Undead Heritage.
+  effect: Undead Heritage works 5000% faster. (Effective x10.58 boost)
+  works_with: Undead
+  notes:
+    - Drow can be used but not required.
+    - This takes 6 hours, 40 minutes, 47 seconds.
+    - No upgrades will reduce the time required.
+  tips:
+    - Awarded if your playtime is at least 6h, 40m, 47s and you have True Night and the Undead Trade Treaty. You do not need to own the Heritage or have it unlocked
+UDC2:
+  title: Undead Challenge 2
+  name: Experienced Helpers
+  image: "http://musicfamily.org/realm/Factions/picks/ExperiencedHelpersChallenge.png"
+  text: >
+    "The walking dead, pleased with your newfound strenghs, send you on a mission to reap as many souls as possible under the cover of the Night to bolster their forces."
+  requirements:
+    - Undead as Base Faction
+    - Reincarnation 8+
+    - Undead Bloodline
+    - Undead challenge 1 completed
+  challenge: Cast Night Time when you have over 100 assistants.
+  effect: Assistant production is increased by 10%. Does not suffer from Ascension penalties.
+  works_with: Elven
+  notes:
+    - Drow can be used but not required.
+UDC3:
+  title: Undead Challenge 3
+  name: Death Knights
+  image: "http://musicfamily.org/realm/Factions/picks/DeathKnightsChallenge.png"
+  text: >
+    "The walking dead are prepared for a zombie invasion. Their last task for you is to loot the local cemeteries for possible equipment."
+  requirements:
+    - Undead as Base Faction
+    - Reincarnation 18+
+    - Undead Unique Building
+    - Undead challenge 2 completed
+  challenge: Collect 100 M (1e8) Faction coins.
+  effect: Multiplicatively increase your number of assistants by 10%.
+  works_with: All
+  notes:
+    - Drow can <b>NOT</b> be used unless you can get Drow's Unique Building at R28+.
+UDCR:
+  title: Undead Challenge Reward
+  name: Midnight Time
+  image: "http://musicfamily.org/realm/Factions/picks/MidnightTimeChallengeReward.png"
+  effect: Increase Night Time assistant bonus based on time spent offline this Reincarnation.
+  formula: (0.2 * (x / 60) ^ 0.7)%, where x is your time spent offline this Reincarnation.

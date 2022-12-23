@@ -63,3 +63,6 @@ collections:
   factions:
     output: true
     permalink: /realm/:titleFaction/index.html
+  faction_challenges:
+    output: true
+    permalink: /realm/:title/index.html

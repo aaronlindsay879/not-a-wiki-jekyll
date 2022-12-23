@@ -1,0 +1,4 @@
+---
+layout: challenge
+faction: Undead
+---

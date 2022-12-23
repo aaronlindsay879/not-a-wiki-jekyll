@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+{% include header.html %}
+
+{% assign data = site.data.challenges[page.faction] %}
+
+<h6><a href="/realm/Challenges/"><img src="http://musicfamily.org/realm/Factions/picks/ChallengesTopPage.png"></h6></a>
+
+{% for challenge in data %}
+    {% assign id = challenge[0] %}
+    {% assign body = challenge[1] %}
+
+    <h6 id="{{ id }}"></h6><p><b>{{ body.title }}</b></p>
+    <p><img src="{{ body.image }}" alt="{{ body.name }}" align="middle"> <b>{{ body.name }}</b></p>
+    <p>{{ body.text }}</p>
+
+    {% if body.requirements %}
+        <p><b>Requirements</b>: {% for requirement in body.requirements %}
+            <br>
+            - {{ requirement }}
+        {% endfor %}</p>
+    {% endif %}
+
+    {% if body.challenge %}
+        <p><b>Challenge</b>: {{ body.challenge }}</p>
+    {% endif %}
+
+    <p><b>Effect</b>: {{ body.effect }}</p>
+    {% if body.formula %}
+        <p><b>Formula</b>: {{ body.formula }}</p>
+    {% endif %}
+
+    {% if body.works_with %}
+    <p><b>Upgrade</b>: Works with {{ body.works_with }}</p>
+    {% endif %}
+    
+    {% for note in body.notes %}
+        <p><b>Note</b>: {{ note }}</p>
+    {% endfor %}
+    
+    {% for tip in body.tips %}
+        <p><b>Tip</b>: {{ tip }}</p>
+    {% endfor %}
+
+    <hr>
+{% endfor %}
+
+{% include footer.html %}
