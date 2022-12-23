@@ -18,3 +18,99 @@
     cost: 5 B (5e9)
     effect: Increase Mana Regeneration additively based on the highest amount of Necropolises you built in this Reincarnation.
     formula: +(x ^ 0.3), where x is the highest amount of Necropolises you built in this Reincarnation.
+"Tier 2 Upgrades":
+  - name: Undead Friendship Pact
+    image: "http://musicfamily.org/realm/Factions/picks/UndeadFriendshipPact.png"
+    cost: 100 Undead Coins
+    effect: Unlocks more Undead upgrades.
+  - name: Unholy Rituals
+    image: "http://musicfamily.org/realm/Factions/picks/UndeadUpgrade4.png"
+    cost: 500 B (5e11)
+    effect: Increase offline production based on time spent being offline in this Reincarnation.
+    formula: (0.4 * x ^ 0.8)%, where x is your offline time this Reincarnation.
+  - name: Corpse Supply
+    image: "http://musicfamily.org/realm/Factions/picks/UndeadUpgrade5.png"
+    cost: 5 T (5e12)
+    effect: Gain additional assistants based on time spent being offline in this Reincarnation.
+    formula: +(0.4 * x ^ 0.6), where x is the time spent offline in this Reincarnation.
+  - name: Plagued Buildings
+    image: "http://musicfamily.org/realm/Factions/picks/UndeadUpgrade6.png"
+    cost: 50 T (5e13)
+    effect: Increase the production of all buildings based on time spent in this game.
+    formula: ((0.75 * x ^ 0.75)%, where x is time spent this game.
+"Tier 3 Upgrades":
+  - name: Undead Alliance
+    image: "http://musicfamily.org/realm/Factions/picks/UndeadAlliance.png"
+    cost: 500 Undead Coins
+    effect: Unlocks more Undead upgrades.
+  - name: Dead Fields
+    image: "http://musicfamily.org/realm/Factions/picks/UndeadUpgrade7.png"
+    cost: 5 Qa (5e15)
+    effect: Buildings count 75% more.
+  - name: Tireless Workers
+    image: "http://musicfamily.org/realm/Factions/picks/UndeadUpgrade8.png"
+    cost: 50 Qa (5e16)
+    effect: Increase the production of assistants by 1500%.
+  - name: Undead Resilience
+    image: "http://musicfamily.org/realm/Factions/picks/UndeadUpgrade9.png"
+    cost: 500 Qa (5e17)
+    effect: Increases offline production based on Mana Regeneration.
+    formula: (125 * ln(1 + x) ^ 2.5)%, where x is your Mana Regeneration.
+  - name: Undead Heritage
+    image: "http://musicfamily.org/realm/Factions/picks/UndeadHeritage.png"
+    cost: 5000 Undead Coins
+    effect: You gain additional assistants based on the time spent in this game.
+    formula: +(floor(1 + 1.6 * (x / 3600) ^ 0.6)), where x is time spent this game.
+"Undead Research Requirements":
+  - name: Undercities Quest
+    image: "http://musicfamily.org/realm/Factions/picks/UndercitiesQuestFactionUpgrade.png"
+    description: Hello there. The dead stand ready. Give them a place to rise and live again... Build enough Necropolises, we'll take care of the rest.
+    requirements:
+      - Reincarnation 16+
+      - 1750 Necropolises
+    cost: 10 Dtg (1e100)
+  - name: Undercity
+    image: "http://musicfamily.org/realm/Factions/picks/UndercityFactionUpgrade.png"
+    description: Upgrade Necropolises To Undercities, boosting their production based on time spent in this game and unlocking more unique perks for the building.
+    requirements:
+      - Buy "Undercities Quest"
+    cost: 10 Ttg (1e103)
+    effect: Also allows access to the Research Facilities.
+    formula: (12 * (2.5 * x) ^ 0.75)%, where x is your Playtime (This Game) stat.
+  - name: Laboratory
+    image: "http://musicfamily.org/realm/Factions/picks/LaboratoryFactionUpgrade.png"
+    requirements:
+      - Undercities and all Undead faction upgrades bought.
+    cost: 10 Notg (1e121) coins, 1 M (1e6) Undead coins
+    effect: Unlocks the Alchemy research facility and increases Undead production by 100000%, plus an additional bonus based on Alchemy research points.
+    notes:
+      - Required once throughout the entire game play and does not count towards the bought upgrade stat.
+  - name: Unique Building
+    image: "http://musicfamily.org/realm/Factions/picks/UndeadUniqueBuilding.png"
+    description: >
+      Upgraded from Necropolis.<br>
+      At R16, the Undead's building Necropolis can be upgraded to a Unique Building: Undercity, which is required for some challenges and research quests.
+"Ascension 2 - R100+":
+  - text: <p><b>Additional Alignment:</b> Order</p>
+  - name: Flesh Workshop Quest
+    image: "http://musicfamily.org/realm/Factions/picks/FleshWorkshopQuest.png"
+    description: Heelloo... The dead need to rest... accumulate a high enough offline production to allow them their peace, and they'll be forever your servants.
+    requirements:
+      - 500,000% offline production bonus
+    cost: 1 Ud (1e36) Emerald Coins
+    effect: Grants access to Unique Building.
+  - name: Unique Building Upgrade
+    image: "http://musicfamily.org/realm/Factions/picks/FleshWorkshopUniqueBuildingUpgrade.png"
+    requirements:
+      - Flesh Workshop Quest
+    cost: 1 Td (1e42) Emerald Coins
+    effect: Gives Flesh Workshop Unique Building.
+  - name: Unique Building
+    image: "http://musicfamily.org/realm/Factions/picks/FleshWorkshopUniqueBuilding.png"
+    description: Upgrade Orcish Arenas to Flesh Workshops, boosting their production based on your mana regeneration rate and unlocking more unique perks for the building.
+    requirements:
+      - Flesh Workshop Quest
+    effect:
+      - Grants access to Faction Union.
+      - Increase production based on Mana Regeneration.
+    formula: (35 * x ^ 0.65)%, where x is your Mana Regeneration.

@@ -16,10 +16,13 @@
 {% endfor %}
 
 <p><b>Alignment</b>: {{ page.alignment }}</p>
-<p>{{ page.description  }}</p>
+{% for line in page.description %}
+    <p>{{ line }}</p>
+{% endfor %}
+<br>
 
 {% if page.unlock_requirements %}
-    <p><b>Unlock Requirements</b>:</p>
+    <p><b>Unlock Requirements</b>: {{ page.unlock_requirements }}</p>
 {% else %}
     <p><b>Unlock Requirement</b>: None (all Vanilla Factions are enabled by default)</p>
 {% endif %}
@@ -27,28 +30,73 @@
 
 {% assign faction_spell = site.data.spells[page.faction_spell].spell %}
 <p><b>Faction spell</b></p>
-<p><b><img src="{{ faction_spell.image }}" align="middle"> Night Time</b></p>
+<p><b><img src="{{ faction_spell.image }}" align="middle"> {{ faction_spell.name }}</b></p>
 <p><b>Cost</b>: {{ faction_spell.cost }} Mana - <b>Duration</b>: {{ faction_spell.duration }} </p>
 <p><b>Effect</b>: {{ faction_spell.effect }}</p>
 <br>
 
 {% assign faction_spell_trophy = site.data.spells[page.faction_spell].trophy %}
 <p><b>Spell Trophy & Upgrade</b></p>
-<p><b><img src="{{ faction_spell_trophy.image }}" align="middle"> True Night</b></p>
+<p><b><img src="{{ faction_spell_trophy.image }}" align="middle"> {{ faction_spell_trophy.name }}</b></p>
 <p><b>Requirement</b>: {{ faction_spell_trophy.requirement }}</p>
 <p><b>Cost</b>: {{ faction_spell_trophy.cost }}</p>
 <p><b>Effect</b>: {{ faction_spell_trophy.effect }}</p>
+{% if faction_spell_trophy.formula %}
+    <p><b>Formula</b>: {{ faction_spell_trophy.formula }}</p>
+{% endif %}
+
+{% if page.notes %}
+    <hr>
+    {% for note in page.notes %}
+        <p><b>Note</b>: {{ note }}</p>
+    {% endfor %}
+{% endif %}
 
 {% for group in site.data.upgrades[page.faction] %}
     <hr>
     <p><b>{{ group[0] }}</b></p>
+    {% if group[1]["text"] %}
+        {{ group[1]["text"] }}
+    {% endif %}
+
 
     {% for upgrade in group[1] %}
-        <p><b><img src="{{ upgrade.image }}" align="middle"> {{ upgrade.name }}</b></p>
-        <p><b>Cost</b>: {{ upgrade.cost }}</p>
-        <p><b>Effect</b>: {{ upgrade.effect }}</p>
-        {% if upgrade.formula %}
-            <p><b>Formula</b>: {{ upgrade.formula }}</p>
+        {% comment %}
+            not a fan of this hack but not sure what else to do:
+            some groups have extra text, so just handle those cases specially 
+        {% endcomment %}
+        {% if upgrade.text %}
+            {{ upgrade.text }}
+        {% else %}
+            <p><b><img src="{{ upgrade.image }}" align="middle"> {{ upgrade.name }}</b></p>
+            {% if upgrade.description %}
+                <p><b>Description</b>: {{ upgrade.description }}</p>
+            {% endif %}
+
+            {% if upgrade.requirements %}
+                <p><b>Requirements</b>: {% for requirement in upgrade.requirements %}
+                    <br>
+                    - {{ requirement }}
+                {% endfor %}</p>
+            {% endif %}
+
+            {% if upgrade.cost %}
+                <p><b>Cost</b>: {{ upgrade.cost }}</p>
+            {% endif %}
+
+            {% for effect in upgrade.effect %}
+                <p><b>Effect</b>: {{ effect }}</p>
+            {% endfor %}
+
+            {% if upgrade.formula %}
+                <p><b>Formula</b>: {{ upgrade.formula }}</p>
+            {% endif %}
+
+            {% if upgrade.notes %}
+                {% for note in upgrade.notes %}
+                    <p><b>Note</b>: {{ note }}</p>
+                {% endfor %}
+            {% endif %}
         {% endif %}
         <br>
     {% endfor %}
