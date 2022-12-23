@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+{% include header.html %}
+
+<h6>
+    <a href="/realm/Factions/">
+        <img src="http://musicfamily.org/realm/Factions/picks/{{ page.faction  }}TopPage.png" alt="Spellcraft"
+            align="middle">
+    </a>
+</h6>
+
+<p><b>In-game description</b></p>
+{% for line in page.ingame_description %}
+    <p>{{ line }}</p>
+{% endfor %}
+
+<p><b>Alignment</b>: {{ page.alignment }}</p>
+<p>{{ page.description  }}</p>
+
+{% if page.unlock_requirements %}
+    <p><b>Unlock Requirements</b>:</p>
+{% else %}
+    <p><b>Unlock Requirement</b>: None (all Vanilla Factions are enabled by default)</p>
+{% endif %}
+<br>
+
+{% assign faction_spell = site.data.spells[page.faction_spell].spell %}
+<p><b>Faction spell</b></p>
+<p><b><img src="{{ faction_spell.image }}" align="middle"> Night Time</b></p>
+<p><b>Cost</b>: {{ faction_spell.cost }} Mana - <b>Duration</b>: {{ faction_spell.duration }} </p>
+<p><b>Effect</b>: {{ faction_spell.effect }}</p>
+<br>
+
+{% assign faction_spell_trophy = site.data.spells[page.faction_spell].trophy %}
+<p><b>Spell Trophy & Upgrade</b></p>
+<p><b><img src="{{ faction_spell_trophy.image }}" align="middle"> True Night</b></p>
+<p><b>Requirement</b>: {{ faction_spell_trophy.requirement }}</p>
+<p><b>Cost</b>: {{ faction_spell_trophy.cost }}</p>
+<p><b>Effect</b>: {{ faction_spell_trophy.effect }}</p>
+
+{% for group in page.upgrades %}
+    <hr>
+    <p><b>{{ group[0] }}</b></p>
+
+    {% for upgrade in group[1] %}
+        <p><b><img src="{{ upgrade.image }}" align="middle"> {{ upgrade.name }}</b></p>
+        <p><b>Cost</b>: {{ upgrade.cost }}</p>
+        <p><b>Effect</b>: {{ upgrade.effect }}</p>
+        {% if upgrade.formula %}
+            <p><b>Formula</b>: {{ upgrade.formula }}</p>
+        {% endif %}
+        <br>
+    {% endfor %}
+{% endfor %}
+
+{% include footer.html %}

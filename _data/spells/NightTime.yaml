@@ -1,0 +1,12 @@
+spell:
+  name: Night Time
+  image: "http://musicfamily.org/realm/Factions/picks/NightTime.png"
+  cost: "1,000"
+  duration: 20 seconds
+  effect: The production of assistants is increased by 30% per Necropolis you own.
+trophy:
+  name: True Night
+  image: "http://musicfamily.org/realm/Factions/picks/TrueNightSpellUpgrade.png"
+  cost: 1 M (1e6), A1+ Free
+  requirement: Cast Night Time between 11 PM and 6 AM (local time).
+  effect: Increases Night Time's production of assistants to 40% per Necropolis.
