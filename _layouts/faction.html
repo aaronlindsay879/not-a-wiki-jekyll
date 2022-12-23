@@ -39,7 +39,7 @@
 <p><b>Cost</b>: {{ faction_spell_trophy.cost }}</p>
 <p><b>Effect</b>: {{ faction_spell_trophy.effect }}</p>
 
-{% for group in page.upgrades %}
+{% for group in site.data.upgrades[page.faction] %}
     <hr>
     <p><b>{{ group[0] }}</b></p>
 
