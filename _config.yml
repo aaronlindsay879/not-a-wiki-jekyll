@@ -66,3 +66,6 @@ collections:
   faction_challenges:
     output: true
     permalink: /realm/:title/index.html
+
+include:
+  - _data
